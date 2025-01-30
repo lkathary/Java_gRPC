@@ -1,0 +1,19 @@
+syntax = "proto3";
+package org.lkathary.grpc;
+
+message Stock {
+  string ticker_symbol = 1;
+  string company_name = 2;
+  string description = 3;
+}
+
+message StockQuote {
+  double price = 1;
+  int32 offer_number = 2;
+  string description = 3;
+}
+
+service StockQuoteProvider {
+  rpc clientSideStreamingGetStatisticsOfStocks(stream Stock) returns (StockQuote);
+  rpc bidirectionalStreamingGetListsStockQuotes(stream Stock) returns (stream StockQuote);
+}

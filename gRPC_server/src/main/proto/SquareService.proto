@@ -1,0 +1,15 @@
+syntax = "proto3";
+package org.lkathary.grpc;
+
+message MathRequest {
+  int32 number = 1;
+}
+
+message MathResponse {
+  string text = 1;
+  int64 number = 2;
+}
+
+service SquareProcessor {
+  rpc square(MathRequest) returns (stream MathResponse);
+}

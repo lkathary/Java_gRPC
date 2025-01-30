@@ -1,0 +1,14 @@
+syntax = "proto3";
+package org.lkathary.grpc;
+
+message TextRequest {
+  string word = 1;
+}
+
+message TextResponse {
+  string result = 1;
+}
+
+service TextProcessor {
+  rpc popular(stream TextRequest) returns (TextResponse);
+}

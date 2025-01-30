@@ -1,0 +1,14 @@
+syntax = "proto3";
+package org.lkathary.grpc;
+
+message StringRequest {
+  string word = 1;
+}
+
+message StringResponse {
+  string result = 1;
+}
+
+service ReverseProcessor {
+  rpc reverse(stream StringRequest) returns (stream StringResponse);
+}
