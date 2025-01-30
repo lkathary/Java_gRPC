@@ -19,5 +19,8 @@
 
 -----
 Использованные материалы:
+
 https://www.baeldung.com/grpc-introduction
+
 https://www.baeldung.com/java-grpc-streaming
+
